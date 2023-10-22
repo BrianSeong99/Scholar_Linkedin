@@ -1,0 +1,9 @@
+.idea
+/__pycache__
+nohup.out
+flask.log
+backend/
+backend/data/
+backend/log_info/part_info.json
+backend/log_info/log.data
+backend/log_info/Tracking\ Log\ Documents.xlsx
