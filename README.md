@@ -13,15 +13,24 @@
 ## **Project Features**
 
 * Users can visually compare the popularity of different fields.
-  <img src="./docs/pics/field.png" style="zoom: 90%;" />
+
+<img src="./docs/pics/field.png" style="zoom: 90%;" />
+
 * Quickly understand prominent scholars, compare their influence.
-  <img src="./docs/pics/field_detail.png" style="zoom: 100%;" />
+
+<img src="./docs/pics/field_detail.png" style="zoom: 100%;" />
+
 * View the academic community of a scholar, including advisors, students, and close collaborators.
-  <img src="./docs/pics/person_detail.png" style="zoom: 100%;" />
+
+<img src="./docs/pics/person_detail.png" style="zoom: 100%;" />
+
 * Access more detailed information about scholars using Aminer links.
-  <img src="./docs/pics/aminer.png" style="zoom: 33%;" />
+
+<img src="./docs/pics/aminer.png" style="zoom: 33%;" />
+
 * Stay updated with academic news.
-  <img src="./docs/pics/feeds.png" style="zoom: 27%;" />
+
+<img src="./docs/pics/feeds.png" style="zoom: 27%;" />
 
 ## **Project Technology**
 
