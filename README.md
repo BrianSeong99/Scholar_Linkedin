@@ -1,134 +1,60 @@
-# <center>Final Report</center>
+# <center>Scholar Linkedin</center>
 
-## **NodeFocus**项目总结
+## **Project Intent**
 
-* **项目初衷**
+* **From Individual to the Entire Field**: Current academic websites have vast scholar information but mainly focus on individuals, lacking effective exploration of intrinsic "academic communities" within fields.
 
-  * **从个人到整个领域**：目前的学术网站虽然具有海量的学者信息，但是主要专注于个体，没有很好的挖掘内在的领域“学术群体”信息。
+* **From Scholar to Scholar Communities**: Users often want to understand not only individual scholars but also closely related collaborators.
+
+* **Solution**: Scholar relationship graph based on domains and influence, with visualization.
+
+* **Audience**: Students, researchers.
+
+## **Project Features**
+
+* Users can visually compare the popularity of different fields.
+  <img src="./docs/pics/field.png" style="zoom: 90%;" />
+* Quickly understand prominent scholars, compare their influence.
+  <img src="./docs/pics/field_detail.png" style="zoom: 100%;" />
+* View the academic community of a scholar, including advisors, students, and close collaborators.
+  <img src="./docs/pics/person_detail.png" style="zoom: 100%;" />
+* Access more detailed information about scholars using Aminer links.
+  <img src="./docs/pics/aminer.png" style="zoom: 33%;" />
+* Stay updated with academic news.
+  <img src="./docs/pics/feeds.png" style="zoom: 27%;" />
+
+## **Project Technology**
+
+* Frontend: Vue.js + Bootstrap 4 + D3.js.
+* Backend: MongoDB + Flask.
+
+## **Service Status**
+
+* Handles 1067.35 requests per second on average, with an average response time of 93.69ms.
+* Total visits exceed 400.
+
+## **Project URL**
+
+http://nodefocus.tech/ (Service expected until April 6, 2021)
+
+## **Challenges and Solutions**
+
+* **Frontend**: Overcame challenges in choosing a knowledge graph library, adapting it to our needs, and efficiently sharing data using Vue.js.
+
+* **Backend**: Faced obstacles with server setup, domain registration, data integration, and nginx configuration. Overcame these by migrating from Heroku to Alibaba Cloud, addressing domain registration delays, and using web scraping to acquire and integrate scholar data.
+
+## **Future Plans**
+
+* Open APIs for data access.
+* Full project code open-sourced on GitHub: https://github.com/lllizhenyu/Nodefocus.
+* Exploring opportunities for a startup in the scholar-focused market.
+
+Please note that the text provided here is a translation of the original content you shared. If you have any specific questions or need further information, feel free to ask.
+
+## **Reflections**
+
+I believe that SOA (Service-Oriented Architecture) may be one of the most important courses in my college career. It stands out for its freedom, creativity, and its potential real-world application. It has ignited my inner passion and provided a platform for me, someone who seeks practicality, to develop my dreams. This course may not be like others; it doesn't focus on specific content or involve highly specialized knowledge. Instead, it imparts a way of thinking. When faced with complex problems, it teaches how to efficiently address them using advanced technology and innovative approaches. This, I believe, is not just beneficial for this course alone but also a lifelong mindset. Having a goal and efficiently achieving it is one of the key reasons modern society can progress rapidly.
   
-  * **从学者到学者群体**：用户往往不仅想了解某个学者，还关注与其关系密切的合作者。
-    
-  * **方案**：基于领域和影响力的学者关系图谱及其可视化
-  * **面向群体**：学生、研究者
+## **Thanks**
   
-* **项目功能**
-
-  * 用户可以直观地感受到不同领域的热度对比
-
-    <img src="./docs/pics/field.png" style="zoom: 90%;" />
-  
-  * 借助图谱快速了解领域的知名学者、不同学者之间的影响力比较
-  
-    <img src="./docs/pics/field_detail.png" style="zoom: 100%;" />
-  
-  * 查看某⼀学者所在的学术群体（如：导师、学生、合作紧密的其他学者）
-  
-    <img src="./docs/pics/person_detail.png" style="zoom: 100%;" />
-  
-  * 借助`Aminer`外部链接了解学者更详细信息
-  
-    <img src="./docs/pics/aminer.png" style="zoom: 33%;" />
-  
-  * 关注学术新闻动态
-  
-    <img src="./docs/pics/feeds.png" style="zoom: 27%;" />
-  
-  * 其他功能
-  
-    * 带有异常记录功能的日志系统
-    * 使用`nginx`进行负载均衡；金丝雀动态更新
-  
-* **项目技术**
-
-  * 前端：`Vuejs + Bootstrap 4 + D3js`
-  * 后端：`MongoDB + Flask`
-
-* **服务情况**
-
-  * 使用`ApacheBench`压力测试，平均每秒可以处理`1067.35`个请求，每个请求平均用时`93.69ms`
-  * 截止目前总访问次数超过`400`次
-  
-* **项目地址**
-
-  http://nodefocus.tech/ 预计服务至2021年4月6日 23:59
-
-## 困难与解决方案
-
-* 前端
-
-  当时在技术选型上斟酌了很久，具体是体现在knowledge graph的第三方库的选择上，总共试了3个第三方库，前两次都是因为库本身的功能不是非常完善。最后找到一个有整合好d3js force的一个库，使得能够实现大部分的Graph功能，但还是有点欠缺可修改性。
-
-  其次，在使用这个第三方库的时候，由于可修改性较差，使得很多东西只能绕着这个库来单独实现，这个在嵌入graph的过程中无疑是增加了更多的负担。
-
-  在前端数据同步这一方面，学会了很多vuejs框架的数据共享机制，实现了高效的前端数据加载服务。
-
-* 后端
-
-  因为上线一个网站服务也算是一个系统性的任务，涉及到很多方面的工作，所以遇到的阻碍也是多方面的。像是日志系统、负载均衡等技术方面的工作由于网上的博客等资源很多，基本不会踩到太多坑，整个过程中真正造成卡壳的主要是服务器及域名、数据整合、`nginx`配置这几个方面。
-
-  * 服务器及域名
-
-    选择服务器的时候⼀开始想用`Heroku`，但是访问太慢，最后只好采用阿里云服务器。
-
-    在中期答辩的时候发现还没有弄域名，于是又找了很多办法希望获取一个域名，但是没有成功，最后只好按部就班地在阿里云上进行域名购买、申请、审核等一系列操作，终于在终期的时候部署到了`nodefocus.tech`上。主要是域名的申请周期太长，前前后后等了有一个多月。
-
-  * 数据整合
-
-    因为我们项目的宗旨是学者图谱的可视化，所以学者数据对于我们的服务来说是至关重要的。随着服务的完善，我们的数据来源在过程中也发生了一些变化。最开始我们使用的是`Aminer`的开放数据中提供的`Topic-coauthor`数据集，其中的数据格式比较规整 ，便于处理，基于此我们整理了八个领域的页面以及领域内学者关系页面的所需数据。但是到了后期我们需要为每位学者提供详细的个人信息展示页面，这些个人信息包括基本介绍、近期论文、群体关系图等，原有的数据集已经无法满足需求。于是我们调研了`Google scholar`、`Semantic Scholar`、`Web of Science`、`Microsoft Academic`等多个学术网站，但是站在我们的需求角度来看他们的`API`都不是很好用，最终我们选择的方式是以`Aminer`为数据来源，通过爬虫的方式将所需的数据都爬取下来，再进一步整合，最终完善了整个服务功能。
-
-  * `nginx`配置
-
-    由于第一次使用`nginx`来做负载均衡，所以在配置方面还是踩了一些坑，需要多次调试。其中最难以解决的一个错误是`nginx`运行起来以后访问`vue-cli`搭建的前端却显示`Invalid Host Header`，按照网上博客的说法，这是由于新版的`webpack-dev-server`出于安全考虑，默认检查`hostname`，如果`hostname`不是配置内的就不能访问。需要添加`disableHostCheck: true`的设置。
-
-
-## 进一步计划
-
-* 开放API
-
-  我们开放了后端数据接口的`API`：
-
-  http://123.56.73.194:3389/fields
-
-  http://123.56.73.194:3389/fieldname/?limit      
-  
-  http://123.56.73.194:3389/person/?name
-  
-  http://123.56.73.194:3389/news/
-  
-  其具体含义描述见：
-  
-  https://git.tsinghua.edu.cn/cheng-zy17/storms/blob/dev/docs/API_convention.md
-
-- 代码开源
-
-  目前已经全部项目代码开源至github，地址为：
-
-  https://github.com/lllizhenyu/Nodefocus
-
-* 创业公司
-
-  这一计划本身是一个非常玄学，不知道可不可行的事情，但这一计划本身是需要勇气和钻研的。个人认为在学者市场上还是有许多的机会，但从1到n的机会可能已经不是太多了，所以在此个人就打算通过人才库以及一些人才库的可交互性，来实现0到1的突破，让大家能够通过我们平台找到他们需要的人，并了解这些人。
-
-## 感想
-
-* 成镇宇
-
-  我觉得SOA可能是我大学生涯里最重要的课，没有之一了。它的自由度，可创作性，以及真的可能可以实现的落地性，激发了许多我内在的热情，给我这个寻求接地气的人提供了发展自己梦想的平台。这门课可能不像别的课，它既不考什么东西，也不涉及到非常具体的专业知识，但它所给予的是一种思维方式，在一个大型的问题面前，如何用最先进的科技、思考方式去高效的解决这些问题。而这正是我觉得不仅仅是收益我这门课的，也是能够让我受益终身的思考方式。有了目标，以最快最聪明的方式实现它，是一种现代社会能够迅猛发展的重要原因之一。
-
-  还有很多感受我觉得我跟李振宇的相似我就不在这里重复。但我是真的觉得上面提到的一点是会改变我人生的方式。因为我觉得人与人的差别可能不仅仅是在努力还是不努力上，可能还有一个重要的角度就是思想方面，它会定义一个人的格局，一个人是否会幸福，但我觉得在这方面我是真的学到了一种高效的思考方式。
-
-* 李振宇
-
-  我觉得`soa`这门课确实很有意义，首先课程有很大的灵活度，从选题到采用的技术到最终展示，同学们几乎不受到任何限制，可以按照自己的兴趣大胆去做，而且老师和助教还提供了尽可能的支持，这大大提高了同学们整体的生产力。从最终的展示可以看出来每个组的项目都有自己的特色之处，百花齐放，每位同学在其中也学到了很多，我认为这门课的目的充分达到了，之后有机会我也会向其他同学推荐这门课。
-  
-  接下来我谈谈自己在这门课上的具体收获。首先是在数据的收集和整理方面，因为我主要负责后端，其中的一个工作重心就是整合我们的服务最重要展示出来的数据。学期初我还认为数据整合是一个比较轻松的工作，但是做的过程中越来越发现要整合出“适配”特定服务的数据有许多困难要去克服，比如有没有可靠的数据来源？收集的数据是否可以经过处理转换成需要的格式？数据字段缺失或者存在不一致怎么办？如何同名消岐？针对这些问题，目前我们的服务仍然存在改进空间。但是不得不说在整个过程中我在收集信息、进行预处理等方面的能力都得到了增强，积累了不少经验，相信以后遇到类似的问题会轻车熟路。
-  
-  另外我也学到了很多技术方面的知识，包括在服务器上部署服务、`mongodb`使用、`flask`使用、日志系统实现、用`nginx`进行负载均衡和动态更新、压力测试等等。我也慢慢体会到了老师和助教的良苦用心，就是希望我们能通过一个体量不大的课程项目来感受、了解一套复杂系统的整个运营流程，包括最后`Aminer`的负责人也向我们传授了相关知识和经验，让我们有了很大的收获。
-  
-  在团队合作上，我最大的感受就是 落实一些具体的规范 能够很大程度上避免因为每个人理解不同造成的时间和工作量的浪费。这一点上我觉得成镇宇同学的提议很好，因为我们两人分别作前后端，因此为了提高沟通效率，我们在`gitlab`上专门有了一个文件叫做  [**API_convention.md**](https://git.tsinghua.edu.cn/cheng-zy17/storms/blob/dev/docs/API_convention.md)，其中是前端所需的各种后端接口格式，后端只需要按照指定格式提供接口即可，这样有各种改动两人都会知晓，极大地提高了效率。
-  
-  对于课程内容和课程设计，我觉得整体的安排已经很不错了，但是从个人角度来讲，前半学习唐杰老师在讲整个技术架构的时候有很多地方其实没太听懂，这可能是因为我在网络服务技术方面没有什么知识储备。所以我觉得老师在讲授的时候可以把一些基础内容讲得更清楚一些。
-  
-  ## 致谢
-  
-  最后感谢老师和助教一学期以来的付出和指导！
+Finally, I want to express my gratitude to the teachers and teaching assistants for their dedication and guidance throughout the semester!
